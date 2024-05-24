@@ -37,7 +37,7 @@ fun WebViewExample() {
                     builtInZoomControls = true
                     displayZoomControls = false // 확대/축소 컨트롤 표시 여부
                 }
-                loadUrl("https://www.wikipedia.org")
+                loadUrl("https://main--coupon-moa.netlify.app/")
 
                 setInitialScale(1) // 초기 확대/축소 레벨 설정
             }
