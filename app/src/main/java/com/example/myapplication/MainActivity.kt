@@ -32,11 +32,10 @@ class MainActivity : ComponentActivity() {
 
         // 권한 요청
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(
                     this,
-                    arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO),
+                    arrayOf(Manifest.permission.CAMERA),
                     REQUEST_CAMERA_PERMISSION
                 )
             }
@@ -66,11 +65,10 @@ fun WebViewExample() {
                         // 권한 요청 처리
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                             if (ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
-                                != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
                                 != PackageManager.PERMISSION_GRANTED) {
                                 ActivityCompat.requestPermissions(
                                     context as ComponentActivity,
-                                    arrayOf(Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO),
+                                    arrayOf(Manifest.permission.CAMERA),
                                     1
                                 )
                             } else {
@@ -89,7 +87,6 @@ fun WebViewExample() {
                     setSupportZoom(true)
                     builtInZoomControls = true
                     displayZoomControls = false
-                    mediaPlaybackRequiresUserGesture = false // 자동 미디어 재생 허용
                     allowFileAccess = true // 파일 액세스 허용
                     javaScriptCanOpenWindowsAutomatically = true // 자바스크립트 팝업 허용
                 }
