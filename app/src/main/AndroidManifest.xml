@@ -19,11 +19,28 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <meta-data
+            android:name="asset_statements"
+            android:resource="@string/asset_statements" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MyApplication">
+            android:name="com.google.androidbrowserhelper.trusted.LauncherActivity"
+            android:exported="true">
+
+            <meta-data
+                android:name="android.support.customtabs.trusted.DEFAULT_URL"
+                android:value="https://main--coupon-moa.netlify.app" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE"/>
+                <data
+                    android:scheme="https"
+                    android:host="main--coupon-moa.netlify.app"/>
+            </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
